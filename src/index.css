@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.priority {
+  list-style-type: none;
+  text-indent: 1.5em;
+}
+
+.card {
+  min-height: 150px;
+  min-width: 150px;
+  max-width: 300px;
+  border: solid;
+  border-radius: 30px;
+  margin: 10px;
+  padding: 20px;
+}
+
+.taskItem {
+  margin-bottom: 10px;
+}
