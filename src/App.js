@@ -6,16 +6,9 @@ import NewTaskForm from "./containers/newTaskForm";
 class App extends Component {
   state = {
     listData: [],
-    taskData: [],
-    openForm: ""
+    taskData: []
   };
   render() {
-    const newClick = e => {
-      this.setState({
-        openForm: this.state.openForm === e.target.id ? "" : e.target.id
-      });
-    };
-
     const addTask = task => {
       this.setState({ taskData: [...this.state.taskData, task] });
     };
@@ -26,20 +19,8 @@ class App extends Component {
 
     return (
       <div>
-        <button id="newList" onClick={newClick}>
-          Create New List
-        </button>
-        <button id="newTask" onClick={newClick}>
-          Create New Task
-        </button>
-        {this.state.openForm === "newList" ? (
-          <NewListForm addList={addList} />
-        ) : null}
-
-        {this.state.openForm === "newTask" ? (
-          <NewTaskForm addTask={addTask} data={this.state.listData} />
-        ) : null}
-
+        <NewListForm addList={addList} />
+        <NewTaskForm addTask={addTask} data={this.state.listData} />
         <ListContainer
           listData={this.state.listData}
           taskData={this.state.taskData}
